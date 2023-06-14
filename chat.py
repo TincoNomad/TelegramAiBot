@@ -5,6 +5,8 @@ from typing import Final
 from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
+load_dotenv()
+
 TOKEN = Final= '6167863630:AAHiOTBaTQCvJKLKOuz-SkN4vBY0oIROIvk'
 BOT_USERNAME: Final = '@TincoAiBbot'
 
@@ -14,8 +16,6 @@ async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 #Logica de respuesta con AI
 def handle_responses(text: str) -> str:
-
-    load_dotenv()
 
     hub_llm = HuggingFaceHub(
         repo_id="google/flan-t5-base",
