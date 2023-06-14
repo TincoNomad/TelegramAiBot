@@ -28,7 +28,7 @@ def handle_responses(text: str) -> str:
     )
 
     hub_chain = LLMChain(prompt=prompt, llm=hub_llm)
-    return("la respuesta es: " + hub_chain.run(text))
+    return(hub_chain.run(text))
 
 #Recolectar info del chat y manejo de respuestas
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
